@@ -1,0 +1,28 @@
+/* footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #b0afb1;
+    color: #000000;
+    padding: 25px;
+    margin: 5px;
+    border-radius: 10px;
+
+}
+header {
+    background-color: #cecece;
+    color: #293531;
+    padding: 25px;
+    margin: 5px;
+    border-radius: 10px;
+}
+@media only screen and (max-width:768px) {
+    body {
+        background-color: #000;
+        color: #FFF;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
