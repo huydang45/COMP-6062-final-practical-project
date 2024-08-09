@@ -8,39 +8,42 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Name: Dang Nguyen Xuan Huy
-        </h1>
-        <h1>Student ID: 1161059</h1>
-    </header>
-    <main>
-        <div class="container" id="myapp">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Random Fact</h5>
-                    <p>{{fact}}</p>
-                    <button type="button">New Fact</button>
-                </div>
-                <div class="col-md-4">
-                    <h5>Current Weather</h5>
-                    <p>{{curWeather}}</p>
-                    <input type="text" placeholder="Input City">
-                    <button type="button">Get Weather</button>
-                </div>
-                    
-                <div class="col-md-4">
-                    <h5>Dictionary</h5>
-                    <p>{{word}}</p>
-                    <input type="text" placeholder="Enter Word">
-                    <button type="button">Define</button>
-                </div>
-            </div>
-        </div>
+    <div class="container" id="myapp">
+        <header>
+            <h1>Name: Dang Nguyen Xuan Huy
+            </h1>
+            <h1>Student ID: 1161059</h1>
+        </header>
+        <main>
             
-    </main>
-    <footer>
-        &copy; Huy Dang - 1161059
-    </footer>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Random Fact</h5>
+                        <p>{{fact}}</p>
+                        <button type="button">New Fact</button>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Current Weather</h5>
+                        <p>{{curWeather}}</p>
+                        <input type="text" placeholder="Input City">
+                        <button type="button">Get Weather</button>
+                    </div>
+                        
+                    <div class="col-md-4">
+                        <h5>Dictionary</h5>
+                        <p>{{word}}</p>
+                        <input type="text" placeholder="Enter Word">
+                        <button type="button">Define</button>
+                    </div>
+                </div>
+            
+                
+        </main>
+        <footer>
+            &copy; Huy Dang - 1161059
+        </footer>
+    </div>
+    
     <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
     <script src="scripts/app.js"></script>
 </body>
