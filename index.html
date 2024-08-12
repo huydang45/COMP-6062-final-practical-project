@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Final Project</title>
     <!-- bootstrap link -->
@@ -7,44 +8,67 @@
     <!-- css style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container" id="myapp">
-        <header>
-            <h1>Name: Dang Nguyen Xuan Huy
-            </h1>
-            <h1>Student ID: 1161059</h1>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <h1 class="fs-4">Name: Dang Nguyen Xuan Huy</h1>
+            <span>&emsp;</span>
+            <h1 class="fs-4">Student ID: 1161059</h1>
         </header>
         <main>
-            
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>Random Fact</h5>
-                        <p>{{fact}}</p>
-                        <button type="button">New Fact</button>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Random Fact</div>
+                        <div class="card-body">
+                            <p class="card-text">{{fact}}</p>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-outline-primary">New Fact</button>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <h5>Current Weather</h5>
-                        <p>{{curWeather}}</p>
-                        <input type="text" placeholder="Input City">
-                        <button type="button">Get Weather</button>
-                    </div>
-                        
-                    <div class="col-md-4">
-                        <h5>Dictionary</h5>
-                        <p>{{word}}</p>
-                        <input type="text" placeholder="Enter Word">
-                        <button type="button">Define</button>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Current Weather</div>
+                        <div class="card-body">
+                            <p class="card-text">{{curWeather}}</p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Input City" aria-label="Input City" aria-describedby="button-weather">
+                                <button class="btn btn-outline-success" type="button" id="button-weather">Get Weather</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
-                
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Dictionary</div>
+                        <div class="card-body">
+                            <p class="card-text">{{word}}</p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Enter Word" aria-label="Enter Word" aria-describedby="button-word">
+                                <button class="btn btn-outline-success" type="button" id="button-word">Define</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </main>
-        <footer>
-            &copy; Huy Dang - 1161059
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-body-secondary">&copy; Huy Dang - 1161059</span>
+            </div>
         </footer>
     </div>
-    
     <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
     <script src="scripts/app.js"></script>
 </body>
+
 </html>
