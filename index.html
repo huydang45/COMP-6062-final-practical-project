@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body> 
+    <!-- Mount the vue app here with the container -->
     <div class="container" id="myapp">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <h1 class="fs-4">Name: Dang Nguyen Xuan Huy</h1>
@@ -21,11 +22,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">Random Fact</div>
+                        <div class="card-header bold-text">Random Fact</div>
                         <div class="card-body">
-                            <p class="card-text">{{fact}}</p>
+                            <p class="card-text" v-if="fact === 'Loading'">Loading...</p>
+                            <p class="card-text" v-else>{{fact}}</p>
                             <div class="mb-3">
-                                <button type="button" class="btn btn-outline-primary">New Fact</button>
+                                <button type="button" class="btn btn-outline-primary" @click="fetchFact()">New Fact</button>
                             </div>
                             
                         </div>
@@ -34,12 +36,17 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">Current Weather</div>
+                        <div class="card-header bold-text">Current Weather</div>
                         <div class="card-body">
-                            <p class="card-text">{{curWeather}}</p>
+                            <p class="card-text" v-if="curWeather.temp === 'Loading'">Loading...</p>
+                            <p class="card-text" v-else>
+                                <strong>Temperature:</strong> {{curWeather.temp}}<br>
+                                <strong>Wind Speed:</strong> {{curWeather.wind}}<br>
+                                <strong>Description:</strong> {{curWeather.des}}
+                            </p>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Input City" aria-label="Input City" aria-describedby="button-weather">
-                                <button class="btn btn-outline-success" type="button" id="button-weather">Get Weather</button>
+                                <input type="text" class="form-control" placeholder="Input City" v-model="city" aria-label="Input City" aria-describedby="button-weather">
+                                <button class="btn btn-outline-success" type="button" id="button-weather" @click="fetchWeather()">Get Weather</button>
                             </div>
                         </div>
                     </div>
@@ -47,12 +54,13 @@
 
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">Dictionary</div>
+                        <div class="card-header bold-text">Dictionary</div>
                         <div class="card-body">
-                            <p class="card-text">{{word}}</p>
+                            <p class="card-text" v-if="meaning === 'Loading'">Loading...</p>
+                            <p class="card-text" v-else v-html="meaning"></p>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Enter Word" aria-label="Enter Word" aria-describedby="button-word">
-                                <button class="btn btn-outline-success" type="button" id="button-word">Define</button>
+                                <input type="text" class="form-control" v-model="word" placeholder="Enter Word" aria-label="Enter Word" aria-describedby="button-word">
+                                <button class="btn btn-outline-success" type="button" @click="fetchWord()" id="button-word">Define</button>
                             </div>
                         </div>
                     </div>
