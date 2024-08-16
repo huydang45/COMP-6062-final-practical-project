@@ -1,31 +1,49 @@
 .bold-text {
+    /* Make text bold */
     font-weight: bold;
+
 }
 
 @media only screen and (max-width:768px) {
     body {
+        /* Light grey background for small screens */
         background-color: #f0f0f0;
+        /* Darker text color for readability */
         color: #333;
+        /* Set font family */
         font-family: Arial, Helvetica, sans-serif;
+        /* Add padding */
         padding: 10px;
+
     }
 
     h1 {
+        /* Darker color for headings */
         color: #444;
+        /* Adjust font size */
         font-size: 1.5rem;
+        /* Center align text */
         text-align: center;
+
     }
 
     .card {
+        /* Add bottom margin to cards */
         margin-bottom: 20px;
+
     }
 
     .card-header {
+        /* Adjust font size for card headers */
         font-size: 1.2rem;
+
     }
 
     .btn {
+        /* Adjust font size for buttons */
         font-size: 1rem;
+        /* Make buttons full width */
         width: 100%;
+
     }
 }

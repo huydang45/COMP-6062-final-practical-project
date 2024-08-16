@@ -9,58 +9,72 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body> 
+<body>
     <!-- Mount the vue app here with the container -->
     <div class="container" id="myapp">
+        <!-- Header section with name and student ID -->
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <h1 class="fs-4">Name: Dang Nguyen Xuan Huy</h1>
             <span>&emsp;</span>
             <h1 class="fs-4">Student ID: 1161059</h1>
         </header>
         <main>
-
+            <!-- Main content area with three cards to display the information -->
             <div class="row">
                 <div class="col-md-4">
+                    <!-- Random Fact card -->
                     <div class="card">
                         <div class="card-header bold-text">Random Fact</div>
                         <div class="card-body">
+                            <!-- Display facts -->
                             <p class="card-text" v-if="fact === 'Loading'">Loading...</p>
                             <p class="card-text" v-else>{{fact}}</p>
                             <div class="mb-3">
-                                <button type="button" class="btn btn-outline-primary" @click="fetchFact()">New Fact</button>
+                                <!-- Button to fetch a new random fact -->
+                                <button type="button" class="btn btn-outline-primary" @click="fetchFact()">New
+                                    Fact</button>
                             </div>
-                            
+
                         </div>
                     </div>
 
                 </div>
                 <div class="col-md-4">
+                    <!-- Current Weather card -->
                     <div class="card">
                         <div class="card-header bold-text">Current Weather</div>
                         <div class="card-body">
+                            <!-- Display weather details -->
                             <p class="card-text" v-if="curWeather.temp === 'Loading'">Loading...</p>
                             <p class="card-text" v-else>
                                 <strong>Temperature:</strong> {{curWeather.temp}}<br>
                                 <strong>Wind Speed:</strong> {{curWeather.wind}}<br>
                                 <strong>Description:</strong> {{curWeather.des}}
                             </p>
+                            <!-- Input and button to fetch weather for a different city -->
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Input City" v-model="city" aria-label="Input City" aria-describedby="button-weather">
-                                <button class="btn btn-outline-success" type="button" id="button-weather" @click="fetchWeather()">Get Weather</button>
+                                <input type="text" class="form-control" placeholder="Input City" v-model="city"
+                                    aria-label="Input City" aria-describedby="button-weather">
+                                <button class="btn btn-outline-success" type="button" id="button-weather"
+                                    @click="fetchWeather()">Get Weather</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
+                    <!-- Dictionary card -->
                     <div class="card">
                         <div class="card-header bold-text">Dictionary</div>
                         <div class="card-body">
+                            <!-- Display word definition -->
                             <p class="card-text" v-if="meaning === 'Loading'">Loading...</p>
                             <p class="card-text" v-else v-html="meaning"></p>
+                            <!-- Input and button to fetch definition for a different word -->
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" v-model="word" placeholder="Enter Word" aria-label="Enter Word" aria-describedby="button-word">
-                                <button class="btn btn-outline-success" type="button" @click="fetchWord()" id="button-word">Define</button>
+                                <input type="text" class="form-control" v-model="word" placeholder="Enter Word">
+                                <button class="btn btn-outline-success" type="button" @click="fetchWord()"
+                                    id="button-word">Define</button>
                             </div>
                         </div>
                     </div>
@@ -69,13 +83,16 @@
 
 
         </main>
+        <!-- Footer section with copyright information -->
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <span class="mb-3 mb-md-0 text-body-secondary">&copy; Huy Dang - 1161059</span>
             </div>
         </footer>
     </div>
+    <!-- Vue.js CDN -->
     <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
+    <!-- Custom JavaScript file -->
     <script src="scripts/app.js"></script>
 </body>
 
